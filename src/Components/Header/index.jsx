@@ -16,9 +16,9 @@ const Header = () => {
   return (
     <HeaderContainer isAboutPage={true}>
       <div className="header-container container">
-        <div className="logo">
+        <Link to="/" className="logo">
           <img src={Logo} alt="Logo" />
-        </div>
+        </Link>
         <div className="menu-icon" onClick={handleClick}>
           {!menuToggle ? (
             <HiOutlineMenuAlt3 size={24} />

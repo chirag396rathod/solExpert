@@ -175,6 +175,12 @@ export const ProjectShowOffContainer = styled.div`
         font-size: 14px;
       }
     }
+    .client-data {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0 24px;
+    }
     .section-title {
       color: #0f0f0f;
       font-size: 36px;

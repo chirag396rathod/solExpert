@@ -25,9 +25,15 @@ const ProjectShowOff = () => {
               energy production. Say goodbye to dirt and grime and hello to a
               sparkling clean energy solution!
             </div>
-            <div className="number-of-clients">
-              <div className="client-label">Clients</div>
-              <div className="value">120+</div>
+            <div className="client-data">
+              <div className="number-of-clients">
+                <div className="client-label">Clients</div>
+                <div className="value">500+</div>
+              </div>
+              <div className="number-of-clients">
+                <div className="client-label">Satisfied Costumers</div>
+                <div className="value">2000+</div>
+              </div>
             </div>
           </div>
         </div>

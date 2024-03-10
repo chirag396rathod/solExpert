@@ -27,7 +27,7 @@ const Footer = () => {
                 <FaFacebookF size={16} />
               </a>
               <a
-                href="https://www.facebook.com/solexpert.in?mibextid=ZbWKwL"
+                href="https://twitter.com/intent/tweet?text=Check+out+Solexpert%20-%20Solar%20Panel%20Cleaning%20Service%27s+website.+Follow+for+latest+updates+and+offers+regularly+at&url=https://www.solexpert.in&hashtags=OnlineBusiness"
                 className="social-icon"
               >
                 <FaXTwitter size={16} />
