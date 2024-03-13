@@ -16,6 +16,7 @@ import Reviews from "./Reviews";
 import OurWork from "./OurWork";
 import CommonSlider from "../../Components/CommonSlider";
 import AboutUs from "./AboutUs";
+import ComparisonSection from "./Comparison";
 
 const HomePage = () => {
   const settings = {
@@ -27,7 +28,8 @@ const HomePage = () => {
     slidesToScroll: 1,
     initialSlide: 0,
     lazyLoad: true,
-    autoplay: false,
+    autoplay: true,
+    swipe: false,
   };
   return (
     <HomePageContainer className="container">
@@ -116,6 +118,7 @@ const HomePage = () => {
       <WhyChooseUs />
       <Services />
       <HowItsWork />
+      <ComparisonSection />
       <OurWork />
       <Reviews />
       <AboutUs />

@@ -12,7 +12,7 @@ export const HomePageContainer = styled.div`
       height: 100%;
     }
     @media screen and (max-width: 1080px) {
-      height: 100vh;
+      height: 100%;
       justify-content: flex-start;
       align-items: flex-start;
 
@@ -33,14 +33,14 @@ export const HomePageContainer = styled.div`
     .hero-text {
       font-size: 52px;
       font-weight: 700;
-      line-height: 62px;
+      line-height: 60px;
       color: #0f0f0f;
-      margin-bottom: 32px;
+      margin-bottom: 16px;
       font-family: "Poppins", sans-serif;
       @media screen and (max-width: 1200px) {
         font-size: 28px;
         font-weight: 600;
-        line-height: 34px;
+        line-height: 36px;
         margin-top: 50px;
       }
     }
@@ -52,14 +52,14 @@ export const HomePageContainer = styled.div`
       @media screen and (max-width: 1200px) {
         font-size: 16px;
         font-weight: 400;
-        line-height: 30px;
+        line-height: 20px;
       }
     }
     .buttons {
       display: flex;
       justify-content: flex-start;
       gap: 0 16px;
-      margin-top: 24px;
+      margin-top: 48px;
       @media screen and (max-width: 768px) {
         margin-bottom: 50px;
       }
@@ -108,7 +108,7 @@ export const HomePageContainer = styled.div`
       img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: fill;
       }
       &:hover {
         img {
@@ -122,8 +122,10 @@ export const HomePageContainer = styled.div`
 
 export const ProjectShowOffContainer = styled.div`
   @media screen and (max-width: 1080px) {
-    margin-top: 50px;
+    margin-top: 100px;
   }
+  box-shadow: 0 0 6px -3px rgba(0, 0, 0, 0.2);
+
   .image-cover {
     width: 440px;
     height: 557px;
@@ -150,6 +152,7 @@ export const ProjectShowOffContainer = styled.div`
       @media screen and (max-width: 1080px) {
         right: 0;
         width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
       }
     }
     img {
@@ -179,7 +182,7 @@ export const ProjectShowOffContainer = styled.div`
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      gap: 0 24px;
+      gap: 0 40px;
     }
     .section-title {
       color: #0f0f0f;
@@ -189,6 +192,7 @@ export const ProjectShowOffContainer = styled.div`
       margin-bottom: 16px;
       @media screen and (max-width: 1080px) {
         font-size: 24px;
+        line-height: 30px;
       }
     }
     .description {
@@ -247,8 +251,9 @@ export const WhyChooseUsContainer = styled.div`
       margin-bottom: 8px;
       color: #fff;
       font-size: 24px;
+      font-weight: 600;
       @media screen and (max-width: 1080px) {
-        font-size: 16px;
+        font-size: 22px;
       }
     }
     .card-description {
@@ -264,8 +269,18 @@ export const WhyChooseUsContainer = styled.div`
 `;
 
 export const ServicesContainer = styled.div`
+  .g-5 {
+    @media screen and (max-width: 580px) {
+      --bs-gutter-y: 1rem !important;
+      --bs-gutter-x: 1rem !important;
+    }
+  }
+  .row > * {
+    @media screen and (max-width: 767px) {
+      margin-top: 0 !important;
+    }
+  }
   .service-item {
-    width: 100%;
     @media screen and (max-width: 767px) {
       flex-direction: column-reverse;
     }
@@ -275,6 +290,7 @@ export const ServicesContainer = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
+    min-width: 100%;
   }
   .image-cover {
     width: 100%;
@@ -284,6 +300,7 @@ export const ServicesContainer = styled.div`
     border: 1px solid #ededed;
     @media screen and (max-width: 767px) {
       margin-top: 24px;
+      height: 300px;
     }
     img {
       border-radius: 8px;
@@ -298,8 +315,10 @@ export const ServicesContainer = styled.div`
     align-items: flex-start;
     flex-direction: column;
     height: 100%;
+
     .service-content-title {
       font-size: 24px;
+      line-height: 30px;
       color: #0f0f0f;
       font-weight: 500;
       margin-bottom: 16px;
@@ -333,6 +352,9 @@ export const ServicesContainer = styled.div`
       justify-content: center;
       align-items: center;
       width: fit-content;
+      @media screen and (max-width: 767px) {
+        height: 40px;
+      }
       &:hover {
         background-color: #000;
       }
@@ -341,69 +363,87 @@ export const ServicesContainer = styled.div`
 `;
 
 export const HowItsWorkContainer = styled.div`
+  .col-lg-4 {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .g-5 {
+    @media screen and (max-width: 580px) {
+      --bs-gutter-y: 1rem !important;
+      --bs-gutter-x: 1rem !important;
+    }
+  }
   .info-card {
-    padding: 16px;
-    border-radius: 8px;
-    border: 1px solid #ededed;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
     background-color: #fff;
-    box-shadow: 0 0 6px -3px rgba(0, 0, 0, 0.2);
-
-    &.card-1 {
-      background-color: #e66767;
-    }
-    &.card-2 {
-      background-color: #3ec1d3;
-    }
-    &.card-3 {
-      background-color: #303a52;
-    }
-
-    .info-icon {
+    border: 12px solid #ededed;
+    box-shadow: 0 0 6px -3px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    .index-box {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: -10px;
+      left: -10px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      margin-bottom: 24px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #fff;
+      border: 12px solid #ededed;
+      box-shadow: 0 0 6px -3px rgba(0, 0, 0, 0.5);
+      font-size: 24px;
+      font-weight: 600;
+    }
+    &:hover {
+      svg {
+        transition: all 0.2s ease-in-out;
+        scale: 1.4;
+      }
       .index-box {
-        color: #0f0f0f;
-        background-color: #f5f5f5;
-        width: 40px;
-        height: 40px;
-        border: 1px solid #ededed;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 8px;
-        margin-right: 10px;
-        font-size: 16px;
-        font-weight: 600;
-        @media screen and (max-width: 1080px) {
-          width: 30px;
-          height: 30px;
-        }
+        transition: all 0.2s ease-in-out;
+        scale: 1.1;
       }
       .card-icon {
         color: #fff !important;
-        @media screen and (max-width: 1080px) {
-          width: 30px !important;
-        }
       }
+      .info-title {
+        color: #fff !important;
+      }
+      .info-description {
+        color: #f5f5f5 !important;
+      }
+
+      background-color: #e66767;
+      .index-box {
+        color: #e66767;
+      }
+    }
+    .card-icon {
+      margin-bottom: 16px;
     }
     .info-title {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 600;
-      color: #fff;
-      font-family: "Poppins", sans-serif;
-      @media screen and (max-width: 1080px) {
-        font-size: 16px;
-      }
+      color: #0f0f0f;
+      margin-bottom: 8px;
     }
     .info-description {
-      font-size: 16px;
-      font-weight: 500;
-      color: #f0f0f0;
-      @media screen and (max-width: 1080px) {
-        font-size: 12px;
-      }
+      font-size: 14px;
+      font-weight: 400;
+      color: #757575;
     }
   }
 `;
@@ -543,6 +583,12 @@ export const OurWorkContainer = styled.div`
 `;
 
 export const AboutUsContainer = styled.div`
+  .g-5 {
+    @media screen and (max-width: 580px) {
+      --bs-gutter-y: 1rem !important;
+      --bs-gutter-x: 1rem !important;
+    }
+  }
   .image-cover {
     width: 100%;
     height: 350px;
@@ -564,6 +610,7 @@ export const AboutUsContainer = styled.div`
     height: 100%;
     .service-content-title {
       font-size: 24px;
+      line-height: 30px;
       color: #0f0f0f;
       font-weight: 500;
       margin-bottom: 16px;
@@ -588,6 +635,9 @@ export const AboutUsContainer = styled.div`
       align-items: center;
       width: fit-content;
       text-decoration: none;
+      @media screen and (max-width: 767px) {
+        height: 40px;
+      }
       &:hover {
         background-color: #000;
       }
@@ -623,6 +673,7 @@ export const ServiceDetailContainer = styled.div`
     height: 100%;
     .service-content-title {
       font-size: 24px;
+      line-height: 30px;
       color: #0f0f0f;
       font-weight: 500;
       margin-bottom: 16px;
@@ -664,9 +715,24 @@ export const ServiceDetailContainer = styled.div`
       align-items: center;
       width: fit-content;
       text-decoration: none;
+      @media screen and (max-width: 767px) {
+        height: 40px;
+      }
       &:hover {
         background-color: #000;
       }
+    }
+  }
+`;
+
+export const ComparisonContainer = styled.div`
+  .image-cover {
+    max-height: 435px;
+  }
+  .image-comparison {
+    max-height: 435px;
+    img {
+      object-fit: cover;
     }
   }
 `;

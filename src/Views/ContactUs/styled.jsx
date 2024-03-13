@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 export const ContactUsContainer = styled.div`
+  .g-5 {
+    --bs-gutter-y: 1rem !important;
+    --bs-gutter-x: 1rem !important;
+  }
+  .section-header {
+    margin-top: 50px !important;
+  }
   .google-map-code {
     width: 100%;
     max-height: 100%;
@@ -9,7 +16,7 @@ export const ContactUsContainer = styled.div`
     font-size: 24px;
     color: #0f0f0f;
     font-weight: 500;
-    margin-bottom: 16px;
+    margin-top: 16px;
     font-family: "Poppins", sans-serif;
   }
   .content {
@@ -68,7 +75,6 @@ export const ContactUsContainer = styled.div`
     }
   }
   .content-card {
-    margin-top: 50px;
     border: 1px solid #dedede;
     border-radius: 8px;
     padding: 16px;
@@ -90,6 +96,9 @@ export const ContactUsContainer = styled.div`
         color: #0f0f0f !important;
         margin-bottom: 8px;
         text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

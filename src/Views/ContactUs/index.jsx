@@ -12,7 +12,7 @@ const ContactUs = () => {
         <div className="section-label">Contact Us</div>
         <div className="section-title">Where To Find Us</div>
       </div>
-      <div className="row g-3">
+      <div className="row g-5">
         <div className="col-lg-6 col-md-6 col-sm-12">
           <div className="content">
             <AddressMap />
@@ -22,7 +22,7 @@ const ContactUs = () => {
           <div className="content">
             <div className="service-content-title">Leave A Massage</div>
             <div className="form-container">
-              <div className="row g-3">
+              <div className="row g-5">
                 <div className="col-6">
                   <label>First Name</label>
                   <input type="text" placeholder="Enter First Name" />

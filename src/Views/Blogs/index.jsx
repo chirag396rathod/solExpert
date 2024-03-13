@@ -3,13 +3,13 @@ import { BlogsContainer } from "./styled";
 import { BlogData } from "./mockData";
 import { useNavigate } from "react-router-dom";
 
-const Blogs = () => {
+const Blogs = ({ className }) => {
   const navigation = useNavigate();
   const handleBlogClick = () => {
     navigation(`/blog/${1}`);
   };
   return (
-    <BlogsContainer>
+    <BlogsContainer className={className}>
       <div className="section-header">
         <div className="section-label">Blogs</div>
         <div className="section-title">Explore new Updates</div>

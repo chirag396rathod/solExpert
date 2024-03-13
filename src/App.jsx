@@ -30,7 +30,7 @@ const App = () => {
             <>
               <Header />
               <div className="container">
-                <Services />
+                <Services className="mt-50" />
               </div>
               <Footer />
             </>
@@ -42,7 +42,7 @@ const App = () => {
             <>
               <Header />
               <div className="container">
-                <ServiceDetail />
+                <ServiceDetail className="mt-50" />
               </div>
               <Footer />
             </>
@@ -54,7 +54,7 @@ const App = () => {
             <>
               <Header />
               <div className="container">
-                <AboutUs />
+                <AboutUs className="mt-50" />
               </div>
               <Footer />
             </>
@@ -78,7 +78,7 @@ const App = () => {
             <>
               <Header />
               <div className="container">
-                <Blogs />
+                <Blogs className="mt-50" />
               </div>
               <Footer />
             </>

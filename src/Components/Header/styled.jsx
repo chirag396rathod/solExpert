@@ -27,6 +27,9 @@ export const HeaderContainer = styled.div`
   .menu-icon,
   .mobile-menu {
     display: none !important;
+    .nav-items {
+      margin-bottom: 10px !important;
+    }
   }
   @media screen and (max-width: 1080px) {
     position: sticky;
@@ -64,7 +67,8 @@ export const HeaderContainer = styled.div`
       background-color: #fff;
       .nav-items {
         display: block;
-        padding: 0 25px;
+        padding: 10px 25px !important;
+        border-bottom: 1px solid #ededed !important;
       }
       .download-app {
         margin: 0 16px;
@@ -83,7 +87,8 @@ export const HeaderContainer = styled.div`
       &.active,
       &:hover {
         color: #0f0f0f;
-        border-bottom: 2px solid #0f0f0f;
+        background-color: #ededed;
+        border-radius: 8px;
       }
     }
     .download-app {
@@ -98,9 +103,13 @@ export const HeaderContainer = styled.div`
       color: #0f0f0f;
       border-radius: 8px;
       cursor: pointer;
+      background-color: #f5f5f5;
+
+      @media screen and (max-width: 1080px) {
+        margin-top: 50%;
+      }
       &:hover {
         transition: background-color 0.2s ease-in-out;
-        background-color: #f5f5f5;
       }
     }
   }

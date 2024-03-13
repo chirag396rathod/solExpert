@@ -10,8 +10,8 @@ const WhyChooseUs = () => {
   return (
     <WhyChooseUsContainer>
       <div className="section-header">
-        <div className="section-label">Why Choose Us</div>
-        <div className="section-title">Benefits</div>
+        <div className="section-label">Benefits</div>
+        <div className="section-title">Why Choose Us</div>
       </div>
       <div className="row g-3">
         <div className="col-lg-3 col-md-6 col-sm-12">

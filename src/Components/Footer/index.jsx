@@ -44,11 +44,11 @@ const Footer = () => {
         <div className="footer-contact-link">
           <div className="contact-item">
             <span>Phone: </span>
-            +91 9727630039
+            <a href="tel:+919727630039">+91 9727630039</a>
           </div>
           <div className="contact-item">
             <span>Email: </span>
-            solexpert365@gmail.com
+            <a href="mailto:solexpert365@gmail.com">solexpert365@gmail.com</a>
           </div>
         </div>
         <div className="copy-right-content">

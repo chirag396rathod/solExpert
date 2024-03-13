@@ -5,7 +5,7 @@ import GridImage3 from "../../assets/HomePage/image-3.jpg";
 import GridImage5 from "../../assets/HomePage/image-5.jpg";
 import { Link, useParams } from "react-router-dom";
 
-const ServiceDetail = () => {
+const ServiceDetail = ({ className }) => {
   const { id } = useParams();
   let title = id.split("-").join(" ").toLowerCase();
   const data = [
@@ -44,7 +44,7 @@ const ServiceDetail = () => {
   const activePage = data[parseInt(id) - 1];
 
   return (
-    <ServiceDetailContainer>
+    <ServiceDetailContainer className={className}>
       <div className="container">
         <div className="section-header">
           <div className="section-label">Service</div>

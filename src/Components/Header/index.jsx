@@ -74,42 +74,45 @@ const Header = () => {
         {menuToggle && (
           <div className="mobile-menu">
             <div className="nav-list">
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  isActive ? "nav-items active" : "nav-items"
-                }
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to="/services"
-                className={({ isActive }) =>
-                  isActive ? "nav-items active" : "nav-items"
-                }
-              >
-                Services
-              </NavLink>
-              <NavLink
-                to="/about-us"
-                className={({ isActive }) =>
-                  isActive ? "nav-items active" : "nav-items"
-                }
-              >
-                About Us
-              </NavLink>
-              <Link to="/contact-us" className="nav-items">
-                Contact Us
-              </Link>
-              <NavLink
-                to="/blogs"
-                className={({ isActive }) =>
-                  isActive ? "nav-items active" : "nav-items"
-                }
-              >
-                Blogs
-              </NavLink>
-              <div className="download-app">Download App Now!</div>
+              <div className="container">
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "nav-items active" : "nav-items"
+                  }
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  to="/services"
+                  className={({ isActive }) =>
+                    isActive ? "nav-items active" : "nav-items"
+                  }
+                >
+                  Services
+                </NavLink>
+                <NavLink
+                  to="/about-us"
+                  className={({ isActive }) =>
+                    isActive ? "nav-items active" : "nav-items"
+                  }
+                >
+                  About Us
+                </NavLink>
+                <Link to="/contact-us" className="nav-items">
+                  Contact Us
+                </Link>
+                <NavLink
+                  to="/blogs"
+                  className={({ isActive }) =>
+                    isActive ? "nav-items active" : "nav-items"
+                  }
+                >
+                  Blogs
+                </NavLink>
+
+                <div className="download-app">Download App Now!</div>
+              </div>
             </div>
           </div>
         )}

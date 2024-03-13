@@ -11,7 +11,7 @@ const HowItsWork = () => {
         <div className="section-label">Why Choose Us</div>
         <div className="section-title">How Its Work</div>
       </div>
-      <div className="row g-3">
+      <div className="row g-5">
         <div className="col-lg-4 col-md-6 col-sm-12">
           <div className="info-card card-1">
             <div className="info-icon">

@@ -6,64 +6,24 @@ import GridImage5 from "../../assets/HomePage/image-5.jpg";
 import { IoMdCheckmark } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
-const Services = () => {
+const Services = ({ className }) => {
   const navigation = useNavigate();
   const handleKnowMore = (name) => {
     navigation(`/service/${name}`);
   };
   return (
-    <ServicesContainer>
+    <ServicesContainer className={className}>
       <div className="section-header">
-        <div className="section-label">What We Provides</div>
-        <div className="section-title">Services</div>
+        <div className="section-label">Services</div>
+        <div className="section-title">What We Provides</div>
       </div>
-      <div className="row g-3  service-item">
+
+      <div className="row g-5">
         <div className="col-lg-6 col-md-6 col-sm-12">
-          <div className="content">
-            <div className="service-content-title">
-              Commercial Solar Panel Cleaning
-            </div>
-            <div className="service-content-description">
-              We have carried out solar panel cleaning on large scale ground
-              mounted solar farms and commercial buildings across Southern
-              California.
-            </div>
-            <div className="key-feature">
-              <div className="item">
-                <IoMdCheckmark size={24} color="#28a745" />
-                <span>Professional clean</span>
-              </div>
-              <div className="item">
-                <IoMdCheckmark size={24} color="#28a745" />
-                <span>Framework Inspection</span>
-              </div>
-              <div className="item">
-                <IoMdCheckmark size={24} color="#28a745" />
-                <span>Roof Cleaning</span>
-              </div>
-            </div>
-            <div
-              className="service-content-button"
-              onClick={() => handleKnowMore(1)}
-            >
-              Know More
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-6 col-md-6 col-sm-12">
-          <div className="center-container">
-            <div className="image-cover">
-              <img src={GridImage3} alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="row g-3">
-        <div className="col-lg-6 col-md-6 col-sm-12">
-          <div className="center-container">
-            <div className="image-cover">
-              <img src={GridImage5} alt="" />
-            </div>
+          {/* <div className="center-container"> */}
+          <div className="image-cover">
+            <img src={GridImage5} alt="" />
+            {/* </div> */}
           </div>
         </div>
         <div className="col-lg-6 col-md-6 col-sm-12">
@@ -98,6 +58,47 @@ const Services = () => {
               Know More
             </div>
           </div>
+        </div>
+      </div>
+      <div className="row g-5 mt-5  service-item">
+        <div className="col-lg-6 col-md-12 col-sm-12">
+          <div className="content">
+            <div className="service-content-title">
+              Commercial Solar Panel Cleaning
+            </div>
+            <div className="service-content-description">
+              We have carried out solar panel cleaning on large scale ground
+              mounted solar farms and commercial buildings across Southern
+              California.
+            </div>
+            <div className="key-feature">
+              <div className="item">
+                <IoMdCheckmark size={24} color="#28a745" />
+                <span>Professional clean</span>
+              </div>
+              <div className="item">
+                <IoMdCheckmark size={24} color="#28a745" />
+                <span>Framework Inspection</span>
+              </div>
+              <div className="item">
+                <IoMdCheckmark size={24} color="#28a745" />
+                <span>Roof Cleaning</span>
+              </div>
+            </div>
+            <div
+              className="service-content-button"
+              onClick={() => handleKnowMore(1)}
+            >
+              Know More
+            </div>
+          </div>
+        </div>
+        <div className="col-lg-6 col-md-12 col-sm-12">
+          {/* <div className="center-container"> */}
+          <div className="image-cover">
+            <img src={GridImage3} alt="" />
+          </div>
+          {/* </div> */}
         </div>
       </div>
     </ServicesContainer>

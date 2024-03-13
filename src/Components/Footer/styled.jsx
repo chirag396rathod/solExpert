@@ -75,6 +75,14 @@ export const FooterContainer = styled.div`
     .contact-item {
       font-size: 16px;
       color: #757575;
+      a {
+        color: #0f0f0f !important;
+        text-decoration: none;
+        font-weight: 600;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
       span {
         color: #0f0f0f;
         margin-right: 10px;

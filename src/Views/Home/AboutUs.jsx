@@ -3,14 +3,14 @@ import { AboutUsContainer } from "./styled";
 import AboutUsImage from "../../assets/HomePage/about-us.jpg";
 import { Link } from "react-router-dom";
 
-const AboutUs = () => {
+const AboutUs = ({ className }) => {
   return (
-    <AboutUsContainer>
+    <AboutUsContainer className={className}>
       <div className="section-header">
         <div className="section-label">About Us</div>
         <div className="section-title">What we are?</div>
       </div>
-      <div className="row g-3">
+      <div className="row g-5">
         <div className="col-lg-6 col-md-6 col-sm-12">
           <div className="image-cover">
             <img src={AboutUsImage} alt="" />
