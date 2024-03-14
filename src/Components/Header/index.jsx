@@ -99,9 +99,14 @@ const Header = () => {
                 >
                   About Us
                 </NavLink>
-                <Link to="/contact-us" className="nav-items">
+                <NavLink
+                  to="/contact-us"
+                  className={({ isActive }) =>
+                    isActive ? "nav-items active" : "nav-items"
+                  }
+                >
                   Contact Us
-                </Link>
+                </NavLink>
                 <NavLink
                   to="/blogs"
                   className={({ isActive }) =>
