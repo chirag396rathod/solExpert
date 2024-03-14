@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HomePageContainer = styled.div`
   width: 100%;
   .hero-section {
-    height: calc(100vh - 83px);
+    min-height: calc(100vh - 83px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@ export const HomePageContainer = styled.div`
       color: #0f0f0f;
       margin-bottom: 16px;
       font-family: "Poppins", sans-serif;
-      @media screen and (max-width: 1200px) {
+      @media screen and (min-width: 767px) and (max-width: 1580px) {
         font-size: 28px;
         font-weight: 600;
         line-height: 36px;
@@ -49,7 +49,7 @@ export const HomePageContainer = styled.div`
       font-weight: 400;
       line-height: 40px;
       color: #757575;
-      @media screen and (max-width: 1200px) {
+      @media screen and (min-width: 767px) and (max-width: 1580px) {
         font-size: 16px;
         font-weight: 400;
         line-height: 20px;
