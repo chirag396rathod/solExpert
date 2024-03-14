@@ -17,6 +17,7 @@ import OurWork from "./OurWork";
 import CommonSlider from "../../Components/CommonSlider";
 import AboutUs from "./AboutUs";
 import ComparisonSection from "./Comparison";
+import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
 
 const HomePage = () => {
   const settings = {
@@ -33,6 +34,7 @@ const HomePage = () => {
   };
   return (
     <HomePageContainer className="container">
+      <ScrollToTopOnMount />
       <div className="hero-section">
         <div className="row g-0">
           <div className="col-sm-12 col-md-6 col-lg-6">

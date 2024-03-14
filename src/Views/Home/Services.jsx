@@ -5,6 +5,7 @@ import GridImage5 from "../../assets/HomePage/image-5.jpg";
 
 import { IoMdCheckmark } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
 
 const Services = ({ className }) => {
   const navigation = useNavigate();
@@ -13,6 +14,7 @@ const Services = ({ className }) => {
   };
   return (
     <ServicesContainer className={className}>
+      {className && <ScrollToTopOnMount />}
       <div className="section-header">
         <div className="section-label">Services</div>
         <div className="section-title">What We Provides</div>

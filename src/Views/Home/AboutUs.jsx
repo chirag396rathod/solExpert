@@ -2,10 +2,12 @@ import React from "react";
 import { AboutUsContainer } from "./styled";
 import AboutUsImage from "../../assets/HomePage/about-us.jpg";
 import { Link } from "react-router-dom";
+import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
 
 const AboutUs = ({ className }) => {
   return (
     <AboutUsContainer className={className}>
+      {className && <ScrollToTopOnMount />}
       <div className="section-header">
         <div className="section-label">About Us</div>
         <div className="section-title">What we are?</div>

@@ -4,6 +4,7 @@ import { IoMdCheckmark } from "react-icons/io";
 import GridImage3 from "../../assets/HomePage/image-3.jpg";
 import GridImage5 from "../../assets/HomePage/image-5.jpg";
 import { Link, useParams } from "react-router-dom";
+import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
 
 const ServiceDetail = ({ className }) => {
   const { id } = useParams();
@@ -45,6 +46,7 @@ const ServiceDetail = ({ className }) => {
 
   return (
     <ServiceDetailContainer className={className}>
+      {className && <ScrollToTopOnMount />}
       <div className="container">
         <div className="section-header">
           <div className="section-label">Service</div>

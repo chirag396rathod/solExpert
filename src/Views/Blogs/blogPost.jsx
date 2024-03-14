@@ -2,6 +2,7 @@ import React from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { BlogPostContainer } from "./styled";
 import { useNavigate } from "react-router-dom";
+import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
 
 const BlogPost = () => {
   const navigation = useNavigate();
@@ -11,6 +12,7 @@ const BlogPost = () => {
   };
   return (
     <BlogPostContainer>
+      <ScrollToTopOnMount />
       <div className="back-button" onClick={handleOnBack}>
         <FaChevronLeft size={16} />
         <span>Back</span>

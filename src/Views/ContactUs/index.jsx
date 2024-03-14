@@ -4,10 +4,12 @@ import AddressMap from "../../Components/AddressMap";
 import { IoHomeOutline } from "react-icons/io5";
 import { IoCallOutline } from "react-icons/io5";
 import { MdAlternateEmail } from "react-icons/md";
+import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
 
 const ContactUs = () => {
   return (
     <ContactUsContainer>
+      <ScrollToTopOnMount />
       <div className="section-header">
         <div className="section-label">Contact Us</div>
         <div className="section-title">Where To Find Us</div>

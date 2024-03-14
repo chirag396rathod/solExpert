@@ -2,6 +2,7 @@ import React from "react";
 import { BlogsContainer } from "./styled";
 import { BlogData } from "./mockData";
 import { useNavigate } from "react-router-dom";
+import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
 
 const Blogs = ({ className }) => {
   const navigation = useNavigate();
@@ -10,6 +11,7 @@ const Blogs = ({ className }) => {
   };
   return (
     <BlogsContainer className={className}>
+      <ScrollToTopOnMount />
       <div className="section-header">
         <div className="section-label">Blogs</div>
         <div className="section-title">Explore new Updates</div>
