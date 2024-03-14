@@ -370,8 +370,14 @@ export const HowItsWorkContainer = styled.div`
   }
   .g-5 {
     @media screen and (max-width: 580px) {
-      --bs-gutter-y: 3rem !important;
-      --bs-gutter-x: 3rem !important;
+      --bs-gutter-y: 1rem !important;
+      --bs-gutter-x: 1rem !important;
+    }
+    &.row > * {
+      margin-top: 50px;
+      &:nth-child(1) {
+        margin-top: 20px !important;
+      }
     }
   }
   .info-card {
