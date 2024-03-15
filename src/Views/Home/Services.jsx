@@ -12,95 +12,49 @@ const Services = ({ className }) => {
   const handleKnowMore = (name) => {
     navigation(`/service/${name}`);
   };
+  const mockData = [
+    {
+      title: "Solar Panel Cleaning (Using Water)",
+      description:
+        "Optimize solar panel performance through thorough cleaning with water-based solutions.",
+    },
+    {
+      title: "Dry Solar Panel Cleaning ( Dry )",
+      description:
+        "Revitalize your solar panels with our water-free cleaning expertise, maximizing efficiency and sustainability.",
+    },
+    {
+      title: "Chemical Cleaning",
+      description:
+        "We suggest if your panel health is not good and transparency of glass is less they need chemical cleaning (Cement partial, rubber partial).",
+    },
+    {
+      title: "Solar Power Plant Maintenance",
+      description:
+        "Generation of your Panel not as per PVSys they need maintenance (Maintenance Solution include up to Inverter).",
+    },
+  ];
   return (
     <ServicesContainer className={className}>
       {className && <ScrollToTopOnMount />}
-      <div className="section-header">
-        <div className="section-label">Services</div>
-        <div className="section-title">What We Provides</div>
-      </div>
-
-      <div className="row g-5">
-        <div className="col-lg-6 col-md-6 col-sm-12">
-          {/* <div className="center-container"> */}
-          <div className="image-cover">
-            <img src={GridImage5} alt="" />
-            {/* </div> */}
-          </div>
+      <div className="container">
+        <div className="section-header">
+          <div className="section-label">Services</div>
+          <div className="section-title">What We Provides</div>
         </div>
-        <div className="col-lg-6 col-md-6 col-sm-12">
-          <div className="content">
-            <div className="service-content-title">
-              Residential Solar Panel Cleaning
-            </div>
-            <div className="service-content-description">
-              Solexpert Solar Cleaning, LLC has carried out solar panel cleaning
-              on homes across Southern California. Your solar panels are an
-              expensive investment and it is wise to ensure they are cleaned by
-              insured and trained professionals.
-            </div>
-            <div className="key-feature">
-              <div className="item">
-                <IoMdCheckmark size={24} color="#28a745" />
-                <span>Professional clean</span>
-              </div>
-              <div className="item">
-                <IoMdCheckmark size={24} color="#28a745" />
-                <span>Framework Inspection</span>
-              </div>
-              <div className="item">
-                <IoMdCheckmark size={24} color="#28a745" />
-                <span>Roof Cleaning</span>
+        <div className="row">
+          {mockData.map((item, key) => (
+            <div className="col-3">
+              <div className="service-card">
+                <div className="service-image-cover">
+                  <img src={GridImage3} alt="GridImage3" />
+                </div>
+                <div className="service-title">{item.title}</div>
+                <div className="service-description">{item.description}</div>
+                <div className="more-details">More Details</div>
               </div>
             </div>
-            <div
-              className="service-content-button"
-              onClick={() => handleKnowMore(2)}
-            >
-              Know More
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="row g-5 mt-5  service-item">
-        <div className="col-lg-6 col-md-12 col-sm-12">
-          <div className="content">
-            <div className="service-content-title">
-              Commercial Solar Panel Cleaning
-            </div>
-            <div className="service-content-description">
-              We have carried out solar panel cleaning on large scale ground
-              mounted solar farms and commercial buildings across Southern
-              California.
-            </div>
-            <div className="key-feature">
-              <div className="item">
-                <IoMdCheckmark size={24} color="#28a745" />
-                <span>Professional clean</span>
-              </div>
-              <div className="item">
-                <IoMdCheckmark size={24} color="#28a745" />
-                <span>Framework Inspection</span>
-              </div>
-              <div className="item">
-                <IoMdCheckmark size={24} color="#28a745" />
-                <span>Roof Cleaning</span>
-              </div>
-            </div>
-            <div
-              className="service-content-button"
-              onClick={() => handleKnowMore(1)}
-            >
-              Know More
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-6 col-md-12 col-sm-12">
-          {/* <div className="center-container"> */}
-          <div className="image-cover">
-            <img src={GridImage3} alt="" />
-          </div>
-          {/* </div> */}
+          ))}
         </div>
       </div>
     </ServicesContainer>

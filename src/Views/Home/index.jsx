@@ -18,6 +18,7 @@ import CommonSlider from "../../Components/CommonSlider";
 import AboutUs from "./AboutUs";
 import ComparisonSection from "./Comparison";
 import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
+import WhereWeAre from "./WhereWeAre";
 
 const HomePage = () => {
   const settings = {
@@ -33,97 +34,110 @@ const HomePage = () => {
     swipe: false,
   };
   return (
-    <HomePageContainer className="container">
-      <ScrollToTopOnMount />
-      <div className="hero-section">
-        <div className="row g-0">
-          <div className="col-sm-12 col-md-6 col-lg-6">
-            <div className="hero-text">
-              No.1 Solar Panel <br /> Cleaning Services in Gujarat - Delivered
-              Directly to You!
+    <HomePageContainer>
+      {/* <ScrollToTopOnMount /> */}
+      <div className="container">
+        <div className="hero-section">
+          <div className="row g-0">
+            <div className="col-sm-12 col-md-6 col-lg-6">
+              <div className="hero-text">
+                No.1 Solar Panel <br /> Cleaning Services in Gujarat - Delivered
+                Directly to You!
+              </div>
+              <div className="hero-description">
+                Efficient Cleaning for Maximum Energy Production. <br /> Let Us
+                Brighten Your Solar Investment!
+              </div>
+              <div className="buttons">
+                <div className="hero-btn">Book Service</div>
+                <div className="alt-btn  hero-btn">Call Now!</div>
+              </div>
+              <PiArrowDownLight
+                className="down-icon"
+                size={52}
+                color="#0f0f0f"
+              />
             </div>
-            <div className="hero-description">
-              Efficient Cleaning for Maximum Energy Production. <br /> Let Us
-              Brighten Your Solar Investment!
-            </div>
-            <div className="buttons">
-              <div className="hero-btn">Book Service</div>
-              <div className="alt-btn  hero-btn">Call Now!</div>
-            </div>
-            <PiArrowDownLight className="down-icon" size={52} color="#0f0f0f" />
-          </div>
-          <div className="col-sm-12 col-md-6 col-lg-6">
-            <div className="grid-container">
-              <div className="row my-row g-3 image-grid">
-                <CommonSlider className="my-col col-6" settings={settings}>
-                  <div className="image-cover">
-                    <img src={GridImage4} />
-                  </div>
-                  <div className="image-cover">
-                    <img src={GridImage3} />
-                  </div>
-                  <div className="image-cover">
-                    <img src={GridImage5} />
-                  </div>
-                  <div className="image-cover">
-                    <img src={GridImage6} />
-                  </div>
-                </CommonSlider>
-                <CommonSlider className="col-6" settings={settings}>
-                  <div className="image-cover">
-                    <img src={GridImage3} />
-                  </div>
-                  <div className="image-cover">
-                    <img src={GridImage5} />
-                  </div>
-                  <div className="image-cover">
-                    <img src={GridImage6} />
-                  </div>
-                  <div className="image-cover">
-                    <img src={GridImage4} />
-                  </div>
-                </CommonSlider>
-                <CommonSlider className="col-6" settings={settings}>
-                  <div className="image-cover">
-                    <img src={GridImage5} />
-                  </div>
-                  <div className="image-cover">
-                    <img src={GridImage6} />
-                  </div>
-                  <div className="image-cover">
-                    <img src={GridImage4} />
-                  </div>
-                  <div className="image-cover">
-                    <img src={GridImage3} />
-                  </div>
-                </CommonSlider>
-                <CommonSlider className="col-6" settings={settings}>
-                  <div className="image-cover">
-                    <img src={GridImage6} />
-                  </div>
-                  <div className="image-cover">
-                    <img src={GridImage4} />
-                  </div>
-                  <div className="image-cover">
-                    <img src={GridImage3} />
-                  </div>
-                  <div className="image-cover">
-                    <img src={GridImage5} />
-                  </div>
-                </CommonSlider>
+            <div className="col-sm-12 col-md-6 col-lg-6">
+              <div className="grid-container">
+                <div className="row my-row g-3 image-grid">
+                  <CommonSlider className="my-col col-6" settings={settings}>
+                    <div className="image-cover">
+                      <img src={GridImage4} />
+                    </div>
+                    <div className="image-cover">
+                      <img src={GridImage3} />
+                    </div>
+                    <div className="image-cover">
+                      <img src={GridImage5} />
+                    </div>
+                    <div className="image-cover">
+                      <img src={GridImage6} />
+                    </div>
+                  </CommonSlider>
+                  <CommonSlider className="col-6" settings={settings}>
+                    <div className="image-cover">
+                      <img src={GridImage3} />
+                    </div>
+                    <div className="image-cover">
+                      <img src={GridImage5} />
+                    </div>
+                    <div className="image-cover">
+                      <img src={GridImage6} />
+                    </div>
+                    <div className="image-cover">
+                      <img src={GridImage4} />
+                    </div>
+                  </CommonSlider>
+                  <CommonSlider className="col-6" settings={settings}>
+                    <div className="image-cover">
+                      <img src={GridImage5} />
+                    </div>
+                    <div className="image-cover">
+                      <img src={GridImage6} />
+                    </div>
+                    <div className="image-cover">
+                      <img src={GridImage4} />
+                    </div>
+                    <div className="image-cover">
+                      <img src={GridImage3} />
+                    </div>
+                  </CommonSlider>
+                  <CommonSlider className="col-6" settings={settings}>
+                    <div className="image-cover">
+                      <img src={GridImage6} />
+                    </div>
+                    <div className="image-cover">
+                      <img src={GridImage4} />
+                    </div>
+                    <div className="image-cover">
+                      <img src={GridImage3} />
+                    </div>
+                    <div className="image-cover">
+                      <img src={GridImage5} />
+                    </div>
+                  </CommonSlider>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <ProjectShowOff />
-      <WhyChooseUs />
+      <div className="container">
+        <ProjectShowOff />
+        <WhyChooseUs />
+      </div>
       <Services />
-      <HowItsWork />
-      <ComparisonSection />
-      <OurWork />
-      <Reviews />
-      <AboutUs />
+      <div className="container">
+        <HowItsWork />
+        <ComparisonSection />
+        <OurWork />
+      </div>
+      <WhereWeAre />
+      <div className="container">
+        <Reviews />
+        <AboutUs />
+      </div>
     </HomePageContainer>
   );
 };

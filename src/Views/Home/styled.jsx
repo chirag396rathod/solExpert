@@ -11,10 +11,10 @@ export const HomePageContainer = styled.div`
     @media screen and (max-width: 768px) {
       height: 100%;
     }
-    @media screen and (max-width: 1080px) {
+    @media screen and (max-width: 767px) {
       height: 100%;
       justify-content: flex-start;
-      align-items: flex-start;
+      align-items: center;
 
       .down-icon {
         display: none;
@@ -41,7 +41,7 @@ export const HomePageContainer = styled.div`
         color: #e66767;
         font-weight: bold;
       }
-      @media screen and (min-width: 767px) and (max-width: 1580px) {
+      @media screen and (max-width: 1200px) {
         font-size: 28px;
         font-weight: 600;
         line-height: 36px;
@@ -53,7 +53,7 @@ export const HomePageContainer = styled.div`
       font-weight: 400;
       line-height: 40px;
       color: #757575;
-      @media screen and (min-width: 767px) and (max-width: 1580px) {
+      @media screen and (max-width: 1200px) {
         font-size: 16px;
         font-weight: 400;
         line-height: 20px;
@@ -273,95 +273,58 @@ export const WhyChooseUsContainer = styled.div`
 `;
 
 export const ServicesContainer = styled.div`
-  .g-5 {
-    @media screen and (max-width: 580px) {
-      --bs-gutter-y: 1rem !important;
-      --bs-gutter-x: 1rem !important;
-    }
+  background-color: #f5f5f5;
+  padding: 24px 0 24px 0;
+  margin-top: 100px !important;
+  .section-header {
+    margin-top: 0 !important;
   }
-  .row > * {
-    @media screen and (max-width: 767px) {
-      margin-top: 0 !important;
-    }
-  }
-  .service-item {
-    @media screen and (max-width: 767px) {
-      flex-direction: column-reverse;
-    }
-  }
-  .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .service-card {
+    background-color: #fff;
     width: 100%;
-    min-width: 100%;
-  }
-  .image-cover {
-    width: 100%;
-    height: 350px;
-    border-radius: 8px;
-    padding: 16px;
-    border: 1px solid #ededed;
-    @media screen and (max-width: 767px) {
-      margin-top: 24px;
-      height: 300px;
-    }
-    img {
-      border-radius: 8px;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  .content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
     height: 100%;
-
-    .service-content-title {
-      font-size: 24px;
-      line-height: 30px;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px -3px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ededed;
+    .service-image-cover {
+      width: 100%;
+      height: 200px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    overflow: hidden;
+    cursor: pointer;
+    &:hover {
+      .service-image-cover {
+        transition: all 0.2s ease-in-out;
+        scale: 1.11;
+      }
+    }
+    .service-title {
+      margin-top: 24px;
       color: #0f0f0f;
+      font-size: 18px;
       font-weight: 500;
-      margin-bottom: 16px;
-      font-family: "Poppins", sans-serif;
+      margin-bottom: 8px;
+      text-align: center;
     }
-    .service-content-description {
-      font-size: 16px;
+    .service-description {
       color: #757575;
+      font-size: 16px;
       font-weight: 400;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
+      text-align: center;
     }
-    .key-feature {
-      margin-bottom: 32px;
-      .item {
-        span {
-          margin-left: 10px;
-          font-size: 16px;
-          color: #0f0f0f;
-          font-weight: 400;
-        }
-      }
-    }
-    .service-content-button {
-      cursor: pointer;
-      height: 48px;
-      background-color: #0f0f0f;
-      color: #fff;
-      padding: 0 16px;
-      border-radius: 8px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: fit-content;
-      @media screen and (max-width: 767px) {
-        height: 40px;
-      }
-      &:hover {
-        background-color: #000;
-      }
+    .more-details {
+      color: #e66767;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 8px;
+      text-align: center;
     }
   }
 `;
@@ -737,6 +700,61 @@ export const ComparisonContainer = styled.div`
     max-height: 435px;
     img {
       object-fit: cover;
+    }
+  }
+`;
+
+export const WhereWeAreContainer = styled.div`
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 24px 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  .section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 24px;
+    @media screen and (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+  .locations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 24px;
+    .place-name {
+      font-size: 32px;
+      color: #757575;
+      font-weight: 700;
+      text-transform: uppercase;
+      @media screen and (max-width: 767px) {
+        font-size: 16px;
+      }
+      &:hover {
+        color: #0f0f0f;
+      }
+    }
+  }
+  .helper-text {
+    text-align: center;
+    font-size: 16px;
+    color: #757575;
+    font-weight: 400;
+    margin-top: 16px;
+    padding: 0 24px;
+    @media screen and (max-width: 767px) {
+      font-size: 12px;
+    }
+    a {
+      color: #0f0f0f;
+      font-weight: 600;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 `;
