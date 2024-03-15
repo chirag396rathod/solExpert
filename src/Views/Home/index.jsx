@@ -39,8 +39,8 @@ const HomePage = () => {
         <div className="row g-0">
           <div className="col-sm-12 col-md-6 col-lg-6">
             <div className="hero-text">
-              Solar Panel <br /> Cleaning Services,
-              <br /> Direct to Your Doorstep
+              No.1 Solar Panel <br /> Cleaning Services in Gujarat - Delivered
+              Directly to You!
             </div>
             <div className="hero-description">
               Efficient Cleaning for Maximum Energy Production. <br /> Let Us

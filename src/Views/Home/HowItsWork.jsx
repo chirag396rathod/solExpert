@@ -8,7 +8,6 @@ const HowItsWork = () => {
   return (
     <HowItsWorkContainer>
       <div className="section-header">
-        <div className="section-label">Why Choose Us</div>
         <div className="section-title">How Its Work</div>
       </div>
       <div className="row g-5">

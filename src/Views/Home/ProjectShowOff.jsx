@@ -27,7 +27,7 @@ const ProjectShowOff = () => {
             </div>
             <div className="client-data">
               <div className="number-of-clients">
-                <div className="client-label">Clients</div>
+                <div className="client-label">Satisfied Clients</div>
                 <div className="value">500+</div>
               </div>
               <div className="number-of-clients">

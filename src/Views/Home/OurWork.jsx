@@ -110,7 +110,7 @@ const OurWork = () => {
     <OurWorkContainer>
       <div className="section-header">
         <div className="section-label">Our Work</div>
-        <div className="section-title">What we did!</div>
+        <div className="section-title">Our Latest Project Gallery</div>
       </div>
       <div className="slider-container">
         <CommonSlider settings={settings} sliderRef={sliderRef}>

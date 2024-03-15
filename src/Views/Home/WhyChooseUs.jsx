@@ -37,20 +37,20 @@ const WhyChooseUs = () => {
         <div className="col-lg-3 col-md-6 col-sm-12">
           <div className="benefit-card card-3">
             <GiVacuumCleaner size={40} color="##fff" />
-            <div className="card-title">Accuracy</div>
+            <div className="card-title">Professional cleaning</div>
             <div className="card-description">
-              Trust in our meticulous cleaning techniques to ensure the highest
-              level of cleanliness and accuracy.
+              Experience Professionally Executed Cleaning Services Tailored for
+              Your Solar Panels
             </div>
           </div>
         </div>
         <div className="col-lg-3 col-md-6 col-sm-12">
           <div className="benefit-card card-4">
             <MdSwitchAccessShortcutAdd size={40} color="##fff" />
-            <div className="card-title">Convenience</div>
+            <div className="card-title">Cleaning with safety</div>
             <div className="card-description">
-              Enjoy the convenience of hassle-free cleaning services brought
-              directly to your doorstep.
+              Experience the Ultimate in Safe and Reliable Cleaning Services
+              Tailored Specifically for Your Solar Panels
             </div>
           </div>
         </div>

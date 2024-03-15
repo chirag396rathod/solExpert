@@ -31,12 +31,16 @@ export const HomePageContainer = styled.div`
       width: 100%;
     }
     .hero-text {
-      font-size: 52px;
+      font-size: 38px;
       font-weight: 700;
       line-height: 60px;
       color: #0f0f0f;
       margin-bottom: 16px;
       font-family: "Poppins", sans-serif;
+      span {
+        color: #e66767;
+        font-weight: bold;
+      }
       @media screen and (min-width: 767px) and (max-width: 1580px) {
         font-size: 28px;
         font-weight: 600;
@@ -531,12 +535,6 @@ export const OurWorkContainer = styled.div`
         width: 100%;
         height: 100%;
         object-fit: contain;
-      }
-      &:hover {
-        img {
-          transition: all 0.2s ease-in-out;
-          transform: scale(1.1);
-        }
       }
     }
   }
