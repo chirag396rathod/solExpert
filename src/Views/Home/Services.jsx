@@ -42,9 +42,9 @@ const Services = ({ className }) => {
           <div className="section-label">Services</div>
           <div className="section-title">What We Provides</div>
         </div>
-        <div className="row">
+        <div className="row g-3">
           {mockData.map((item, key) => (
-            <div className="col-3">
+            <div className="col-md-6 col-sm-12 col-lg-3">
               <div className="service-card">
                 <div className="service-image-cover">
                   <img src={GridImage3} alt="GridImage3" />

@@ -276,6 +276,12 @@ export const ServicesContainer = styled.div`
   background-color: #f5f5f5;
   padding: 24px 0 24px 0;
   margin-top: 100px !important;
+  .g-5 {
+    @media screen and (max-width: 580px) {
+      --bs-gutter-y: 1rem !important;
+      --bs-gutter-x: 1rem !important;
+    }
+  }
   .section-header {
     margin-top: 0 !important;
   }
@@ -708,7 +714,7 @@ export const WhereWeAreContainer = styled.div`
   width: 100%;
   background-color: #f5f5f5;
   padding: 24px 0;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 50px;
   .section-title {
     text-align: center;
@@ -755,6 +761,22 @@ export const WhereWeAreContainer = styled.div`
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+`;
+
+export const AchievementsContainer = styled.div`
+  .achievements-container {
+    text-align: center;
+    .index {
+      font-size: 32px;
+      font-weight: 600;
+      color: #e66767;
+      font-family: "Poppins", sans-serif;
+    }
+    .text {
+      font-size: 24px;
+      font-weight: 500;
     }
   }
 `;

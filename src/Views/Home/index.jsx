@@ -19,6 +19,7 @@ import AboutUs from "./AboutUs";
 import ComparisonSection from "./Comparison";
 import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
 import WhereWeAre from "./WhereWeAre";
+import Achievements from "./Achievements";
 
 const HomePage = () => {
   const settings = {
@@ -35,7 +36,7 @@ const HomePage = () => {
   };
   return (
     <HomePageContainer>
-      {/* <ScrollToTopOnMount /> */}
+      <ScrollToTopOnMount />
       <div className="container">
         <div className="hero-section">
           <div className="row g-0">
@@ -127,14 +128,17 @@ const HomePage = () => {
         <ProjectShowOff />
         <WhyChooseUs />
       </div>
-      <Services />
       <div className="container">
         <HowItsWork />
+      </div>
+      <Services />
+      <div className="container">
         <ComparisonSection />
         <OurWork />
       </div>
       <WhereWeAre />
       <div className="container">
+        <Achievements />
         <Reviews />
         <AboutUs />
       </div>
