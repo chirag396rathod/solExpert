@@ -4,20 +4,26 @@ import { BlogData } from "./mockData";
 import { useNavigate } from "react-router-dom";
 import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
 
-const Blogs = ({ className }) => {
+const Blogs = ({ className, isSubSection }) => {
   const navigation = useNavigate();
   const handleBlogClick = () => {
     navigation(`/blog/${1}`);
   };
+
+  const data = isSubSection ? BlogData.slice(0, 3) : BlogData;
   return (
     <BlogsContainer className={className}>
-      <ScrollToTopOnMount />
-      <div className="section-header">
-        <div className="section-label">Blogs</div>
-        <div className="section-title">Explore new Updates</div>
-      </div>
+      {!isSubSection && (
+        <>
+          <ScrollToTopOnMount />
+          <div className="section-header">
+            <div className="section-label">Blogs</div>
+            <div className="section-title">Explore new Updates</div>
+          </div>
+        </>
+      )}
       <div className="row g-4">
-        {BlogData.map((item, key) => (
+        {data.map((item, key) => (
           <div
             className="col-sm-12 col-md-6 col-lg-4"
             key={key}
@@ -35,6 +41,16 @@ const Blogs = ({ className }) => {
             </div>
           </div>
         ))}
+        {isSubSection && (
+          <div
+            className="view-more"
+            onClick={() => {
+              navigation("/blogs");
+            }}
+          >
+            View More
+          </div>
+        )}
       </div>
     </BlogsContainer>
   );

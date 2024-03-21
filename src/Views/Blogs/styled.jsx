@@ -35,6 +35,15 @@ export const BlogsContainer = styled.div`
       color: #0f0f0f;
     }
   }
+  .view-more {
+    text-align: right;
+    font: 500 16px "Poppins", sans-serif;
+    color: #0f0f0f;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 export const BlogPostContainer = styled.div`

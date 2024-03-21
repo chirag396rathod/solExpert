@@ -8,7 +8,7 @@ const Achievements = () => {
         <div className="section-label">About Us</div>
         <div className="section-title">Our Achievements</div>
       </div>
-      <div className="row g-3">
+      <div className="row gx-3 gy-5">
         <div className="col-md-6 col-lg-4 col-sm-12">
           <div className="achievements-container">
             <div className="index">10+</div>

@@ -23,6 +23,47 @@ export const HomePageContainer = styled.div`
     .row {
       width: 100%;
     }
+    .google-review-box {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 16px;
+      border: 1px solid #ededed;
+      border-radius: 8px;
+      margin-top: 24px;
+      max-width: 500px;
+      @media screen and (max-width: 767px) {
+        margin-top: 0px;
+        margin-bottom: 24px;
+      }
+      .icon-cover {
+        width: 24px;
+        height: 24px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        margin-right: 12px;
+      }
+      .content {
+        flex: 1;
+        .title {
+          font-size: 16px;
+          font-weight: 500;
+          font-family: "Poppins", sans-serif !important;
+          line-height: 18px;
+          margin-bottom: 5px;
+          color: #0f0f0f;
+        }
+        .description {
+          font-size: 12px;
+          font-weight: 400;
+          font-family: "Poppins", sans-serif !important;
+          line-height: 20px;
+          color: #757575;
+        }
+      }
+    }
     .grid-container {
       display: flex;
       justify-content: center;
@@ -33,7 +74,7 @@ export const HomePageContainer = styled.div`
     .hero-text {
       font-size: 38px;
       font-weight: 700;
-      line-height: 60px;
+      line-height: 52px;
       color: #0f0f0f;
       margin-bottom: 16px;
       font-family: "Poppins", sans-serif;
@@ -51,12 +92,17 @@ export const HomePageContainer = styled.div`
     .hero-description {
       font-size: 24px;
       font-weight: 400;
-      line-height: 40px;
+      line-height: 30px;
       color: #757575;
       @media screen and (max-width: 1200px) {
         font-size: 16px;
         font-weight: 400;
         line-height: 20px;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      br {
+        display: none;
       }
     }
     .buttons {
@@ -65,7 +111,7 @@ export const HomePageContainer = styled.div`
       gap: 0 16px;
       margin-top: 48px;
       @media screen and (max-width: 768px) {
-        margin-bottom: 50px;
+        margin-bottom: 24px;
       }
     }
     .alt-btn {
@@ -273,7 +319,7 @@ export const WhyChooseUsContainer = styled.div`
 `;
 
 export const ServicesContainer = styled.div`
-  background-color: #f5f5f5;
+  background-color: ${({ className }) => (className ? "none" : "#f5f5f5")};
   padding: 24px 0 24px 0;
   margin-top: 100px !important;
   .g-5 {
@@ -773,10 +819,20 @@ export const AchievementsContainer = styled.div`
       font-weight: 600;
       color: #e66767;
       font-family: "Poppins", sans-serif;
+      @media screen and (max-width: 767px) {
+        font-size: 24px;
+        font-weight: 500;
+      }
     }
     .text {
       font-size: 24px;
       font-weight: 500;
+      @media screen and (max-width: 767px) {
+        font-size: 16px;
+        font-weight: 400;
+      }
     }
   }
 `;
+
+export const BlogsContainer = styled.div``;

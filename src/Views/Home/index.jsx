@@ -8,6 +8,7 @@ import GridImage4 from "../../assets/HomePage/image-4.jpg";
 import GridImage3 from "../../assets/HomePage/image-3.jpg";
 import GridImage5 from "../../assets/HomePage/image-5.jpg";
 import GridImage6 from "../../assets/HomePage/image-6.jpg";
+import googleIcon from "../../assets/HomePage/google.svg";
 import ProjectShowOff from "./ProjectShowOff";
 import WhyChooseUs from "./WhyChooseUs";
 import Services from "./Services";
@@ -20,6 +21,8 @@ import ComparisonSection from "./Comparison";
 import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
 import WhereWeAre from "./WhereWeAre";
 import Achievements from "./Achievements";
+import BlogsSlider from "./Blogs";
+import Accordion from "../../Components/AccordionComponent";
 
 const HomePage = () => {
   const settings = {
@@ -53,11 +56,19 @@ const HomePage = () => {
                 <div className="hero-btn">Book Service</div>
                 <div className="alt-btn  hero-btn">Call Now!</div>
               </div>
-              <PiArrowDownLight
-                className="down-icon"
-                size={52}
-                color="#0f0f0f"
-              />
+              <div className="google-review-box">
+                <div className="icon-cover">
+                  <img src={googleIcon} alt="" />
+                </div>
+                <div className="content">
+                  <div className="title">
+                    Solexpert is Gujarat's trusted solar cleaning company
+                  </div>
+                  <div className="description">
+                    Based on 4.9 rating on Google and 200+ Satisfied Customer
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-6">
               <div className="grid-container">
@@ -126,10 +137,11 @@ const HomePage = () => {
       </div>
       <div className="container">
         <ProjectShowOff />
-        <WhyChooseUs />
+        <HowItsWork />
       </div>
       <div className="container">
-        <HowItsWork />
+        <WhyChooseUs />
+        <BlogsSlider />
       </div>
       <Services />
       <div className="container">
@@ -141,6 +153,7 @@ const HomePage = () => {
         <Achievements />
         <Reviews />
         <AboutUs />
+        <Accordion />
       </div>
     </HomePageContainer>
   );

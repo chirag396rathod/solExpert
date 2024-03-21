@@ -34,6 +34,7 @@ const Services = ({ className }) => {
         "Generation of your Panel not as per PVSys they need maintenance (Maintenance Solution include up to Inverter).",
     },
   ];
+
   return (
     <ServicesContainer className={className}>
       {className && <ScrollToTopOnMount />}
