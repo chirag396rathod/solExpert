@@ -22,7 +22,7 @@ import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
 import WhereWeAre from "./WhereWeAre";
 import Achievements from "./Achievements";
 import BlogsSlider from "./Blogs";
-import Accordion from "../../Components/AccordionComponent";
+import FAQSection from "../../Components/AccordionComponent";
 
 const HomePage = () => {
   const settings = {
@@ -153,7 +153,7 @@ const HomePage = () => {
         <Achievements />
         <Reviews />
         <AboutUs />
-        <Accordion />
+        <FAQSection />
       </div>
     </HomePageContainer>
   );
