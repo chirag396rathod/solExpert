@@ -35,7 +35,6 @@ export const AccordionContainer = styled.div`
         font-weight: 400;
         font-size: 14px;
         color: #757575;
-        font-family: "Poppins";
       }
     }
   }
