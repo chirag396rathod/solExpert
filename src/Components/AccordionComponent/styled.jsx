@@ -8,7 +8,7 @@ export const AccordionContainer = styled.div`
     font-family: "Poppins";
     @media screen and (max-width: 1080px) {
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 600;
       max-width: 94%;
     }
   }
