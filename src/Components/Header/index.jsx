@@ -68,7 +68,7 @@ const Header = () => {
             >
               Blogs
             </NavLink>
-            <div className="download-app">Download App Now!</div>
+            <div className="download-app">Contact Now!</div>
           </div>
         </div>
         {menuToggle && (
@@ -116,7 +116,7 @@ const Header = () => {
                   Blogs
                 </NavLink>
 
-                <div className="download-app">Download App Now!</div>
+                <div className="download-app">Contact Now!</div>
               </div>
             </div>
           </div>
