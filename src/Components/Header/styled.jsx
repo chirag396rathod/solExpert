@@ -24,6 +24,9 @@ export const HeaderContainer = styled.div`
       height: 50px;
     }
   }
+  a{
+    text-decoration: none !important;
+  }
   .menu-icon,
   .mobile-menu {
     display: none !important;
@@ -72,6 +75,7 @@ export const HeaderContainer = styled.div`
       }
       .download-app {
         margin: 0 16px;
+        text-decoration: none;
       }
     }
     .nav-items {

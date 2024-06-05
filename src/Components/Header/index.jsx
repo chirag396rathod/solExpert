@@ -68,7 +68,14 @@ const Header = () => {
             >
               Blogs
             </NavLink>
-            <div className="download-app">Contact Now!</div>
+
+            <a
+              href="https://forms.gle/fA6zzyoBCLEPhLRL6"
+              target="_blank"
+              className="social-icon"
+            >
+              <div className="download-app">Contact Now!</div>
+            </a>
           </div>
         </div>
         {menuToggle && (
@@ -115,8 +122,13 @@ const Header = () => {
                 >
                   Blogs
                 </NavLink>
-
-                <div className="download-app">Contact Now!</div>
+                <a
+                  href="https://forms.gle/fA6zzyoBCLEPhLRL6"
+                  target="_blank"
+                  className="social-icon"
+                >
+                  <div className="download-app">Contact Now!</div>
+                </a>
               </div>
             </div>
           </div>

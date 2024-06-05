@@ -51,7 +51,9 @@ const HomePage = () => {
                 Brighten Your Solar Investment!
               </div>
               <div className="buttons">
-                <div className="hero-btn">Book Service</div>
+                <a href="https://forms.gle/fA6zzyoBCLEPhLRL6" target="_blank" className="social-icon">
+                  <div className="hero-btn">Book Service</div>
+                </a>
                 <a href="tel:+919727630039" className="social-icon">
                   <div className="alt-btn  hero-btn">Call Now!</div>
                 </a>
