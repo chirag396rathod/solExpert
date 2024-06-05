@@ -1,5 +1,6 @@
 import React from "react";
 import GridImage1 from "../../assets/HomePage/image-1.jpg";
+import DryCleanImg from "../../assets/HomePage/home-section.jpg";
 import { ProjectShowOffContainer } from "./styled";
 
 const ProjectShowOff = () => {
@@ -8,7 +9,7 @@ const ProjectShowOff = () => {
       <div className="row">
         <div className="col-sm-12 col-md-6 col-lg-6">
           <div className="image-cover">
-            <img src={GridImage1} alt="Grid Image" />
+            <img src={DryCleanImg} alt="Grid Image" />
             <div className="quotes-box">Naturally Shine Brighter with Us!</div>
           </div>
         </div>

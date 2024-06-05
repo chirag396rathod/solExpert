@@ -127,6 +127,9 @@ export const HomePageContainer = styled.div`
       margin-top: 44px;
       margin-left: -20px;
     }
+    a {
+      text-decoration: none;
+    }
     .hero-btn {
       cursor: pointer;
       height: 48px;

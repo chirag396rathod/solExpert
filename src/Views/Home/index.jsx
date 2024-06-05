@@ -2,8 +2,6 @@ import React from "react";
 import { HomePageContainer } from "./styled";
 import { PiArrowDownLight } from "react-icons/pi";
 
-import GridImage1 from "../../assets/HomePage/image-1.jpg";
-import GridImage2 from "../../assets/HomePage/image-2.jpg";
 import GridImage4 from "../../assets/HomePage/image-4.jpg";
 import GridImage3 from "../../assets/HomePage/image-3.jpg";
 import GridImage5 from "../../assets/HomePage/image-5.jpg";
@@ -54,7 +52,9 @@ const HomePage = () => {
               </div>
               <div className="buttons">
                 <div className="hero-btn">Book Service</div>
-                <div className="alt-btn  hero-btn">Call Now!</div>
+                <a href="tel:+919727630039" className="social-icon">
+                  <div className="alt-btn  hero-btn">Call Now!</div>
+                </a>
               </div>
               <div className="google-review-box">
                 <div className="icon-cover">
@@ -137,7 +137,6 @@ const HomePage = () => {
       </div>
       <div className="container">
         <ProjectShowOff />
-        <HowItsWork />
       </div>
       <div className="container">
         <WhyChooseUs />

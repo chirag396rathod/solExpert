@@ -16,7 +16,7 @@ const AccordionComponent = () => {
   const handleToggle = (id) => {
     setActiveAccordion(id[0] === activeAccordion ? null : id[0]);
   };
-  console.log({ activeAccordion });
+  
   return (
     <>
       <div className="section-header">
