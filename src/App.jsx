@@ -10,6 +10,7 @@ import ContactUs from "./Views/ContactUs";
 import Blogs from "./Views/Blogs";
 import BlogPost from "./Views/Blogs/blogPost";
 import ServiceDetail from "./Views/Home/ServiceDetalPage";
+import CreateBlogs from "./Views/Admin/CreateBlogs";
 const App = () => {
   return (
     <BrowserRouter>
@@ -96,6 +97,7 @@ const App = () => {
             </>
           )}
         ></Route>
+        <Route path="/create-blog" Component={() => <CreateBlogs />}></Route>
         <Route path="*" Component={() => <NoDataFoundPage />}></Route>
       </Routes>
     </BrowserRouter>
