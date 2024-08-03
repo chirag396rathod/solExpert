@@ -3,6 +3,7 @@ import { FaChevronLeft } from "react-icons/fa";
 import { BlogPostContainer } from "./styled";
 import { useNavigate, useParams } from "react-router-dom";
 import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
+import moment from "moment";
 
 const BlogPost = () => {
   const navigation = useNavigate();
@@ -13,8 +14,8 @@ const BlogPost = () => {
   };
 
   const data =
-    localStorage.getItem("blogs") && JSON.parse(localStorage.getItem("blogs"));
-  console.log(data);
+    localStorage.getItem("blogs") &&
+    JSON.parse(localStorage.getItem("blogs"))?.blogsList[id - 1];
   return (
     <BlogPostContainer>
       <ScrollToTopOnMount />
@@ -25,21 +26,26 @@ const BlogPost = () => {
       <div className="blog-content">
         <div className="section-header">
           <div className="section-label">
-            <span className="blog-date">(18 Jan 2022)</span>
+            <span className="blog-date">{`${moment(data?.timestamp).format(
+              "MMM D, YYYY"
+            )}`}</span>
           </div>
-          <div className="section-title">
-            Collaboration can make our teams stronger, and our individual
-            designs better.
-          </div>
+          <div className="section-title">{data?.blog_title}</div>
         </div>
         <div className="blog-image-cover">
-          <img src="https://picsum.photos/1000" alt="" />
+          <img src={data?.image?.url} alt="" />
         </div>
-        <div className="blog-description">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat
-          repellendus soluta, in dignissimos voluptatem consequuntur ullam hic
-          ab obcaecati amet!
-        </div>
+        {data?.content?.map((item, key) => {
+          if (item?.input_type === "textarea") {
+            return <div className="blog-description" key={`description-${key}`}>{item?.input_value}</div>;
+          }
+          if (item?.input_type === "sub_title") {
+            return <div className="blog-subtitle" key={`description-${key}`}>{item?.input_value}</div>;
+          }
+          if (item?.input_type === "bullate_point") {
+            return <li className="blog-bullate-item" key={`description-${key}`}>{item?.input_value}</li>;
+          }
+        })}
       </div>
     </BlogPostContainer>
   );

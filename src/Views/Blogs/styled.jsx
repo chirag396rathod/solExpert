@@ -89,7 +89,7 @@ export const BlogPostContainer = styled.div`
 
   .blog-image-cover {
     width: 100%;
-    height: 450px;
+    max-height: 450px;
     object-fit: cover;
     margin-bottom: 16px;
     border-radius: 8px;
@@ -108,10 +108,31 @@ export const BlogPostContainer = styled.div`
     margin-left: 10px;
   }
   .blog-description {
-    font-size: 16px;
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times,
+      serif !important;
+    font-size: 18px;
     font-weight: 400;
     color: #757575;
     margin-bottom: 16px;
+    letter-spacing: -0.003em;
+    line-height: 28px;
+  }
+  .blog-subtitle {
+    color: #0f0f0f;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    margin-bottom: 12px;
+  }
+  .blog-bullate-item {
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times,
+      serif !important;
+    font-size: 18px;
+    font-weight: 400;
+    color: #757575;
+    margin-bottom: 16px;
+    letter-spacing: -0.003em;
+    line-height: 28px;
   }
   @media screen and (max-width: 1080px) {
     .blog-content {
