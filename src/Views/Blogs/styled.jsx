@@ -23,11 +23,19 @@ export const BlogsContainer = styled.div`
       font-weight: 600;
       color: #0f0f0f;
       margin-bottom: 8px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      white-space: nowrap;
     }
     .sub-title {
       font-size: 16px;
       font-weight: 400;
       color: #757575;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
     }
     .date {
       font-size: 14px;
@@ -47,6 +55,11 @@ export const BlogsContainer = styled.div`
 `;
 
 export const BlogPostContainer = styled.div`
+  .blog-content {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+  }
   .section-header {
     margin-top: 24px !important;
   }
@@ -99,5 +112,10 @@ export const BlogPostContainer = styled.div`
     font-weight: 400;
     color: #757575;
     margin-bottom: 16px;
+  }
+  @media screen and (max-width: 1080px) {
+    .blog-content {
+      max-width: 100%;
+    }
   }
 `;

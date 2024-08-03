@@ -1,16 +1,145 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import moment from "moment";
+import {
+  getDatabase,
+  ref,
+  query,
+  orderByKey,
+  startAfter,
+  limitToLast,
+  get,
+  limitToFirst,
+} from "firebase/database";
+import { app } from "../../firebaseConfig";
 import { BlogsContainer } from "./styled";
-import { BlogData } from "./mockData";
 import { useNavigate } from "react-router-dom";
 import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
+import { generateBlogUrl } from "../../Utils/urlUtils";
 
 const Blogs = ({ className, isSubSection }) => {
   const navigation = useNavigate();
-  const handleBlogClick = () => {
-    navigation(`/blog/${1}`);
+  const [blogsList, setBlogsList] = useState([]);
+  const [lastKey, setLastKey] = useState(null);
+  const [total, setTotal] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const hasBlogs = localStorage.getItem("blogs");
+    const blogsData = hasBlogs && JSON.parse(hasBlogs);
+    if (!hasBlogs) {
+      fetchInitialBlogs();
+    } else {
+      setLastKey(blogsData?.lastKey);
+      setBlogsList(blogsData?.blogsList);
+      setTotal(blogsData?.totalRecords);
+    }
+  }, []);
+
+  const fetchInitialBlogs = async () => {
+    setLoading(true);
+    const db = getDatabase(app);
+    const blogsRef = ref(db, "blogs");
+
+    // Configure query for initial blogs
+    let blogsQueryConfig = isSubSection ? limitToLast(3) : limitToLast(6); // Adjust limit as needed
+    const blogsQuery = query(blogsRef, orderByKey(), blogsQueryConfig);
+
+    try {
+      const snapshot = await get(blogsQuery);
+      if (snapshot.exists()) {
+        const blogData = snapshot.val();
+        const keys = Object.keys(blogData);
+
+        // Reverse keys to get them in descending order
+        const sortedKeys = keys.reverse();
+        const data = sortedKeys.map((key) => ({ id: key, ...blogData[key] }));
+
+        setBlogsList(data);
+        setLastKey(keys[keys.length - 1]);
+
+        // Fetch total number of records
+        const totalSnapshot = await get(ref(db, "blogs"));
+        const totalRecords = totalSnapshot.exists()
+          ? Object.keys(totalSnapshot.val()).length
+          : 0;
+        setTotal(totalRecords);
+
+        localStorage.setItem(
+          "blogs",
+          JSON.stringify({
+            lastKey: keys[keys.length - 1],
+            blogsList: data,
+            totalRecords,
+          })
+        );
+      }
+    } catch (error) {
+      console.error("Error fetching initial blogs:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const data = isSubSection ? BlogData.slice(0, 3) : BlogData;
+  const fetchMoreBlogs = async () => {
+    if (isSubSection) {
+      navigation("/blogs");
+      return;
+    }
+    if (!lastKey) return;
+    setLoading(true);
+    const db = getDatabase(app);
+    const blogsRef = ref(db, "blogs");
+
+    // Configure query for fetching more blogs
+    const blogsQuery = query(
+      blogsRef,
+      orderByKey()
+      // startAfter(lastKey),
+      // limitToFirst(3) // Fetch the next set of blogs
+    );
+
+    try {
+      const snapshot = await get(blogsQuery);
+      if (snapshot.exists()) {
+        const blogData = snapshot.val();
+        const keys = Object.keys(blogData);
+
+        // Reverse keys to maintain descending order
+        const sortedKeys = keys.reverse();
+        const newData = sortedKeys.map((key) => ({
+          id: key,
+          ...blogData[key],
+        }));
+
+        // Append new data to existing list
+        const updatedData = [...newData];
+
+        setBlogsList(updatedData);
+        setLastKey(sortedKeys[0]); // Update lastKey for pagination
+
+        // Save updated data and lastKey to local storage
+        localStorage.setItem(
+          "blogs",
+          JSON.stringify({
+            lastKey: sortedKeys[0],
+            blogsList: updatedData,
+          })
+        );
+      }
+    } catch (error) {
+      console.error("Error fetching more blogs:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleBlogClick = (key, title) => {
+    navigation(`/blog/${key + 1}/${generateBlogUrl(title)}`);
+  };
+
+  const data =
+    blogsList.length > 0 && isSubSection ? blogsList.slice(0, 3) : blogsList;
+
   return (
     <BlogsContainer className={className}>
       {!isSubSection && (
@@ -22,36 +151,46 @@ const Blogs = ({ className, isSubSection }) => {
           </div>
         </>
       )}
-      <div className="row g-4">
-        {data.map((item, key) => (
-          <div
-            className="col-sm-12 col-md-6 col-lg-4"
-            key={key}
-            onClick={handleBlogClick}
-          >
-            <div className="blog-card">
-              <div className="image-cover">
-                <img src="https://picsum.photos/500" alt="" />
-              </div>
-              <div className="content">
-                <div className="title">{item.title}</div>
-                <div className="sub-title">{item.subTitle}</div>
-                <div className="date">{item.date}</div>
+      {!loading ? (
+        <div className="row g-4">
+          {data.map((item, key) => (
+            <div
+              className="col-sm-12 col-md-6 col-lg-4"
+              key={key}
+              onClick={() => handleBlogClick(key, item?.blog_title)}
+            >
+              <div className="blog-card">
+                <div className="image-cover">
+                  <img src={item?.image?.url} alt="" />
+                </div>
+                <div className="content">
+                  <div className="title">{item?.blog_title}</div>
+                  <div className="sub-title">
+                    {item?.content[0]?.input_value}
+                  </div>
+                  <div className="date">
+                    {moment(item?.timestamp).format("MMM D, YYYY")}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-        {isSubSection && (
-          <div
-            className="view-more"
-            onClick={() => {
-              navigation("/blogs");
-            }}
-          >
-            View More
-          </div>
-        )}
-      </div>
+          ))}
+          {!isSubSection && blogsList.length < total && (
+            <div className="view-more" onClick={fetchMoreBlogs}>
+              View More
+            </div>
+          )}
+          {isSubSection && (
+            <div className="view-more" onClick={fetchMoreBlogs}>
+              View More
+            </div>
+          )}
+        </div>
+      ) : (
+        <div className="d-flex justify-content-center align-item-center my-4">
+          <div className="spinner-border text-dark" role="status" />
+        </div>
+      )}
     </BlogsContainer>
   );
 };
