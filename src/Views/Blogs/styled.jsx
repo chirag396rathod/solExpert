@@ -9,6 +9,9 @@ export const BlogsContainer = styled.div`
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 0 6px -3px rgba(0, 0, 0, 0.1);
+      .lazyload-wrapper {
+        height: 100% !important;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -95,6 +98,9 @@ export const BlogPostContainer = styled.div`
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 0 6px -3px rgba(0, 0, 0, 0.1);
+    .react-lazyload{
+      height: 100% !important;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -114,7 +120,7 @@ export const BlogPostContainer = styled.div`
     font-weight: 400;
     color: #757575;
     margin-bottom: 16px;
-    letter-spacing: -0.003em;
+    letter-spacing: -0.002em;
     line-height: 28px;
   }
   .blog-subtitle {
@@ -131,12 +137,22 @@ export const BlogPostContainer = styled.div`
     font-weight: 400;
     color: #757575;
     margin-bottom: 16px;
-    letter-spacing: -0.003em;
+    letter-spacing: -0.002em;
     line-height: 28px;
   }
   @media screen and (max-width: 1080px) {
     .blog-content {
       max-width: 100%;
+    }
+    .blog-description,
+    .blog-bullate-item {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .blog-subtitle {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 24px;
     }
   }
 `;

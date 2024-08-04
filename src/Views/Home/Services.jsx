@@ -11,6 +11,7 @@ import DryCleanImg from "../../assets/HomePage/dray-clean.jpg";
 import WaterCleaning from "../../assets/HomePage/Water-cleaning.jpg";
 import ChemicalCleaning from "../../assets/HomePage/Chemical_Cleaning.jpg";
 import Maintenance from "../../assets/HomePage/PowerPlantMaintenance.jpg";
+import Meta from "../../Utils/Meta";
 
 const Services = ({ className }) => {
   const navigation = useNavigate();
@@ -46,6 +47,7 @@ const Services = ({ className }) => {
 
   return (
     <ServicesContainer className={className}>
+      {className && <Meta title={"Services"} />}
       {className && <ScrollToTopOnMount />}
       <div className="container">
         <div className="section-header">

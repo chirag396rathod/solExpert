@@ -21,6 +21,8 @@ import WhereWeAre from "./WhereWeAre";
 import Achievements from "./Achievements";
 import BlogsSlider from "./Blogs";
 import FAQSection from "../../Components/AccordionComponent";
+import Meta from "../../Utils/Meta";
+import { LazyLoadImage } from "../Blogs";
 
 const HomePage = () => {
   const settings = {
@@ -37,6 +39,7 @@ const HomePage = () => {
   };
   return (
     <HomePageContainer>
+      <Meta title={"Home"} />
       <ScrollToTopOnMount />
       <div className="container">
         <div className="hero-section">
@@ -51,7 +54,11 @@ const HomePage = () => {
                 Brighten Your Solar Investment!
               </div>
               <div className="buttons">
-                <a href="https://forms.gle/fA6zzyoBCLEPhLRL6" target="_blank" className="social-icon">
+                <a
+                  href="https://forms.gle/fA6zzyoBCLEPhLRL6"
+                  target="_blank"
+                  className="social-icon"
+                >
                   <div className="hero-btn">Book Service</div>
                 </a>
                 <a href="tel:+919727630039" className="social-icon">
@@ -77,58 +84,58 @@ const HomePage = () => {
                 <div className="row my-row g-3 image-grid">
                   <CommonSlider className="my-col col-6" settings={settings}>
                     <div className="image-cover">
-                      <img src={GridImage4} />
+                      <LazyLoadImage src={GridImage4} alt={"GridImage4"} />
                     </div>
                     <div className="image-cover">
-                      <img src={GridImage3} />
+                      <LazyLoadImage src={GridImage3} alt={"GridImage3"} />
                     </div>
                     <div className="image-cover">
-                      <img src={GridImage5} />
+                      <LazyLoadImage src={GridImage5} alt={"GridImage5"} />
                     </div>
                     <div className="image-cover">
-                      <img src={GridImage6} />
-                    </div>
-                  </CommonSlider>
-                  <CommonSlider className="col-6" settings={settings}>
-                    <div className="image-cover">
-                      <img src={GridImage3} />
-                    </div>
-                    <div className="image-cover">
-                      <img src={GridImage5} />
-                    </div>
-                    <div className="image-cover">
-                      <img src={GridImage6} />
-                    </div>
-                    <div className="image-cover">
-                      <img src={GridImage4} />
+                      <LazyLoadImage src={GridImage6} alt={"GridImage6"} />
                     </div>
                   </CommonSlider>
                   <CommonSlider className="col-6" settings={settings}>
                     <div className="image-cover">
-                      <img src={GridImage5} />
+                      <LazyLoadImage src={GridImage3} alt={"GridImage3"} />
                     </div>
                     <div className="image-cover">
-                      <img src={GridImage6} />
+                      <LazyLoadImage src={GridImage5} alt={"GridImage5"} />
                     </div>
                     <div className="image-cover">
-                      <img src={GridImage4} />
+                      <LazyLoadImage src={GridImage6} alt={"GridImage6"} />
                     </div>
                     <div className="image-cover">
-                      <img src={GridImage3} />
+                      <LazyLoadImage src={GridImage4} alt={"GridImage4"} />
                     </div>
                   </CommonSlider>
                   <CommonSlider className="col-6" settings={settings}>
                     <div className="image-cover">
-                      <img src={GridImage6} />
+                      <LazyLoadImage src={GridImage5} alt={"GridImage5"} />
                     </div>
                     <div className="image-cover">
-                      <img src={GridImage4} />
+                      <LazyLoadImage src={GridImage6} alt={"GridImage6"} />
                     </div>
                     <div className="image-cover">
-                      <img src={GridImage3} />
+                      <LazyLoadImage src={GridImage4} alt={"GridImage4"} />
                     </div>
                     <div className="image-cover">
-                      <img src={GridImage5} />
+                      <LazyLoadImage src={GridImage3} alt={"GridImage3"} />
+                    </div>
+                  </CommonSlider>
+                  <CommonSlider className="col-6" settings={settings}>
+                    <div className="image-cover">
+                      <LazyLoadImage src={GridImage6} alt={"GridImage6"} />
+                    </div>
+                    <div className="image-cover">
+                      <LazyLoadImage src={GridImage4} alt={"GridImage4"} />
+                    </div>
+                    <div className="image-cover">
+                      <LazyLoadImage src={GridImage3} alt={"GridImage3"} />
+                    </div>
+                    <div className="image-cover">
+                      <LazyLoadImage src={GridImage5} alt={"GridImage5"} />
                     </div>
                   </CommonSlider>
                 </div>

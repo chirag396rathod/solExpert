@@ -15,6 +15,14 @@ import { BlogsContainer } from "./styled";
 import { useNavigate } from "react-router-dom";
 import ScrollToTopOnMount from "../../Components/ScrollToTopOnMount";
 import { generateBlogUrl } from "../../Utils/urlUtils";
+import Meta from "../../Utils/Meta";
+import LazyLoad from "react-lazyload";
+
+export const LazyLoadImage = ({ src, alt, height }) => (
+  <LazyLoad height={height || 300} offset={100}>
+    <img src={src} alt={alt} />
+  </LazyLoad>
+);
 
 const Blogs = ({ className, isSubSection }) => {
   const navigation = useNavigate();
@@ -134,7 +142,7 @@ const Blogs = ({ className, isSubSection }) => {
   };
 
   const handleBlogClick = (key, title) => {
-    navigation(`/blog/${key + 1}/${generateBlogUrl(title)}`);
+    navigation(`/blog/${generateBlogUrl(title)}`);
   };
 
   const data =
@@ -142,6 +150,8 @@ const Blogs = ({ className, isSubSection }) => {
 
   return (
     <BlogsContainer className={className}>
+      {!isSubSection && <Meta title={"Blogs"} />}
+
       {!isSubSection && (
         <>
           <ScrollToTopOnMount />
@@ -161,7 +171,10 @@ const Blogs = ({ className, isSubSection }) => {
             >
               <div className="blog-card">
                 <div className="image-cover">
-                  <img src={item?.image?.url} alt="" />
+                  <LazyLoadImage
+                    src={item?.image?.url}
+                    alt={item?.blog_title}
+                  />
                 </div>
                 <div className="content">
                   <div className="title">{item?.blog_title}</div>

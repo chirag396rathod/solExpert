@@ -18,15 +18,23 @@ const ComparisonSection = () => {
           className="image-comparison"
           itemOne={
             <ReactCompareSliderImage
-              src={GridImage4}
-              srcSet={GridImage4}
+              src={
+                "https://firebasestorage.googleapis.com/v0/b/soleexports-30908.appspot.com/o/site_images%2FIMG_0358.png?alt=media&token=55e3ca61-1dd6-486b-bf54-5db234df716c"
+              }
+              srcSet={
+                "https://firebasestorage.googleapis.com/v0/b/soleexports-30908.appspot.com/o/site_images%2FIMG_0358.png?alt=media&token=55e3ca61-1dd6-486b-bf54-5db234df716c"
+              }
               alt="Image one"
             />
           }
           itemTwo={
             <ReactCompareSliderImage
-              src={GridImage3}
-              srcSet={GridImage3}
+              src={
+                "https://firebasestorage.googleapis.com/v0/b/soleexports-30908.appspot.com/o/site_images%2FIMG_0371.png?alt=media&token=06612a54-2724-49b9-a3e1-83f463bc76b6"
+              }
+              srcSet={
+                "https://firebasestorage.googleapis.com/v0/b/soleexports-30908.appspot.com/o/site_images%2FIMG_0371.png?alt=media&token=06612a54-2724-49b9-a3e1-83f463bc76b6"
+              }
               alt="Image two"
             />
           }

@@ -86,7 +86,7 @@ const App = () => {
           )}
         ></Route>
         <Route
-          path="/blog/:id/:title"
+          path="/blog/:title"
           Component={() => (
             <>
               <Header />
