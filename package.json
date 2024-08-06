@@ -11,9 +11,11 @@
     "homepage": "https://solexpert.in/"
   },
   "dependencies": {
-    "axios": "^1.7.2",
+    "axios": "^1.7.3",
     "bootstrap": "^5.3.3",
-    "firebase": "^10.12.4",
+    "firebase": "^10.12.5",
+    "firebase-admin": "^12.3.0",
+    "firebase-functions": "^5.0.1",
     "formik": "^2.4.6",
     "moment": "^2.30.1",
     "react": "^18.2.0",
@@ -28,6 +30,7 @@
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
+    "@google-cloud/storage": "^7.12.0",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react-swc": "^3.5.0",

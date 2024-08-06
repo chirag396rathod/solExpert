@@ -29,7 +29,8 @@ export const BlogsContainer = styled.div`
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 1;
-      white-space: nowrap;
+      overflow-y: hidden;
+      text-overflow: ellipsis;
     }
     .sub-title {
       font-size: 16px;
@@ -122,6 +123,7 @@ export const BlogPostContainer = styled.div`
     margin-bottom: 16px;
     letter-spacing: -0.002em;
     line-height: 28px;
+    text-align: justify;
   }
   .blog-subtitle {
     color: #0f0f0f;
