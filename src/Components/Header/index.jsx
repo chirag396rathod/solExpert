@@ -125,7 +125,6 @@ const Header = () => {
                 </NavLink>
                 <a
                   href="https://forms.gle/fA6zzyoBCLEPhLRL6"
-                  href="#"
                   target="_blank"
                   className="social-icon"
                 >
