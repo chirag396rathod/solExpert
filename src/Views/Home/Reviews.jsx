@@ -1,29 +1,35 @@
 import React from "react";
 import { ReviewsContainer } from "./styled";
 import { CiStar } from "react-icons/ci";
-import { FaStar } from "react-icons/fa";
-import { FaStarHalfAlt } from "react-icons/fa";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from 'react-intersection-observer';
 
 const Reviews = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1, // Trigger when 10% of the element is in view
+  });
+
   const mockData = [
     {
       name: "Bhavana Parihar",
-      info: `First time serviced with SOLEXPERT team. Getting very good result, good team and approch for work is so good. 1st preference SOLEXPERT Best solar panel cleaning provider in manjalpur area.`,
+      info: `First time serviced with SOLEXPERT team. Getting very good result, good team and approach for work is so good. 1st preference SOLEXPERT Best solar panel cleaning provider in Manjalpur area.`,
       rate: 5,
     },
     {
       name: "Karuna Sharma",
-      info: `Good solar panel cleaning service all dust and bird drop remove efficiency result good experience thank u so much solexpert.`,
+      info: `Good solar panel cleaning service. All dust and bird droppings removed efficiently. Result was good, experience was great. Thank you so much, SOLEXPERT.`,
       rate: 4.5,
     },
     {
       name: "Sujal Chauhan",
-      info: `Best Solar Service quick response and great work efficiently result Vadodara`,
+      info: `Best Solar Service. Quick response and great work. Efficient results in Vadodara.`,
       rate: 5,
     },
     {
       name: "Hiren",
-      info: `We are extremely satisfied with the supply and installation services of solar rooptop SOLEXPERT system in our house.`,
+      info: `We are extremely satisfied with the supply and installation services of the SOLEXPERT solar rooftop system in our house.`,
       rate: 4,
     },
   ];
@@ -47,14 +53,25 @@ const Reviews = () => {
   };
 
   return (
-    <ReviewsContainer>
-      <div className="section-header">
+    <ReviewsContainer ref={ref}>
+      <motion.div
+        className="section-header"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -20 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="section-label">Reviews</div>
         <div className="section-title">What are people saying?</div>
-      </div>
+      </motion.div>
       <div className="row g-3">
         {mockData.map((item, key) => (
-          <div className="col-lg-3 col-md-6 col-sm-12" key={key}>
+          <motion.div
+            className="col-lg-3 col-md-6 col-sm-12"
+            key={key}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+            transition={{ duration: 0.8, delay: key * 0.2 }} // Stagger effect
+          >
             <div className="review-card">
               <div className={`user-profile profile-${key + 1}`}>
                 <span>{item.name.split("")[0]}</span>
@@ -64,7 +81,7 @@ const Reviews = () => {
               <div className="review-description">{item.info}</div>
               <div className="rating">{renderStars(item.rate)}</div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </ReviewsContainer>
