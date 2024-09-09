@@ -29,5 +29,4 @@ sitemapStream.end();
 sitemapPromise.then(sitemapContent => {
   const outputPath = path.join(__dirname, '../public', 'sitemap.xml');
   fs.writeFileSync(outputPath, sitemapContent.toString(), 'utf8');
-  console.log('Sitemap has been generated successfully.');
 });

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { OurWorkContainer } from "./styled";
 import CommonSlider from "../../Components/CommonSlider";
 import { FaArrowLeft } from "react-icons/fa6";
@@ -58,8 +58,7 @@ const workList = [
   },
 ];
 const OurWork = () => {
-  const sliderRef = useRef();
-
+  const sliderRef = useRef()
   var settings = {
     dots: false,
     infinite: true,
@@ -107,7 +106,7 @@ const OurWork = () => {
   };
 
   return (
-    <OurWorkContainer>
+    <OurWorkContainer >
       <div className="section-header">
         <div className="section-label">Our Work</div>
         <div className="section-title">Our Latest Project Gallery</div>
