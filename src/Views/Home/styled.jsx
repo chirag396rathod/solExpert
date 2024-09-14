@@ -681,6 +681,19 @@ export const HeroSectionLayout = styled.div`
     width: 100%;
     height: calc(100vh - 83px);
     min-height: calc(100vh - 83px);
+    div {
+      height: 100%;
+      .lazy-load-image-background {
+        height: 100vh;
+        height: 100%;
+        @media screen and (max-width: 767px) {
+          img {
+            height: 100% !important;
+            object-fit: cover;
+          }
+        }
+      }
+    }
   }
   .background-slider {
     position: absolute;
@@ -727,7 +740,7 @@ export const HeroSectionLayout = styled.div`
     @media screen and (max-width: 767px) {
       height: 100%;
       justify-content: flex-start;
-      align-items: center;
+      align-items: flex-start;
 
       .down-icon {
         display: none;
@@ -752,8 +765,9 @@ export const HeroSectionLayout = styled.div`
       right: 24px;
       /* max-width: 300px; */
       @media screen and (max-width: 767px) {
-        margin-top: 0px;
-        margin-bottom: 24px;
+        right: 0px;
+        bottom: 16px;
+        margin: 0 16px;
       }
       .icon-cover {
         width: 24px;
@@ -809,11 +823,19 @@ export const HeroSectionLayout = styled.div`
         margin-top: 50px;
       }
     }
+    .hero-description {
+      p {
+        margin: 0;
+        @media screen and (max-width: 767px) {
+          padding-bottom: 8px;
+        }
+      }
+    }
     .hero-description,
     span {
       font-size: 24px !important;
       font-weight: 400 !important;
-      line-height: 30px !important;
+      line-height: 17px !important;
       color: #fff !important;
       @media screen and (max-width: 1200px) {
         font-size: 16px !important;

@@ -85,10 +85,11 @@ const HeroSection = () => {
             Directly to You!
           </div>
           <div className="hero-description">
-            Efficient Cleaning for Maximum Energy Production. <br />
+            <p>Efficient Cleaning for Maximum Energy Production.</p>
+            <br />
             <TypeAnimation
               sequence={[
-                "Boost Your Solar Efficiency with Our Expert Cleaning!",
+                "Boost Solar Efficiency with Expert Cleaning!",
                 1000,
                 "Keep Your Panels Shining, Energy Flowing!",
                 1000,
